@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUYEN DOI TIEN TE</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>Amount</td>
+                <td>From Currency</td>
+                <td>To Currency</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="gia_tri">
+                </td>
+                <td>
+                    <select name="" id="chuyen">
+                        <option value="VND">VietNam</option>
+                        <option value="USD">USD</option>
+                        <option value="YEN">YEN</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="" id="den">
+                        <option value="VND">VietNam</option>
+                        <option value="USD">USD</option>
+                        <option value="YEN">YEN</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="Convert" id="convert" onclick="chuyentien()">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+function chuyentien(){
+        let gia_tri = parseInt(document.getElementById('gia_tri').value);
+        let chuyen = document.getElementById('chuyen').value;
+        let den = document.getElementById('den').value;
+        let result = 0;
+        if(chuyen == 'VND' && den == 'USD') {
+            result = gia_tri/23000;
+        }
+        if (chuyen == 'USD' && den == 'VND'){
+            result = gia_tri*23000;
+        }
+        if (chuyen == 'USD' && den == 'YEN'){
+            result = gia_tri*100;
+        }if (chuyen == 'YEN' && den == 'USD'){
+            result = gia_tri/100;
+        }
+        if(chuyen == 'VND' && den == 'YEN') {
+            result = gia_tri/206;
+        }
+        if (chuyen == 'YEN' && den == 'VND'){
+            result = gia_tri*206;
+        }
+        document.write('result='+result)
+    }
+</script>
+</html>
