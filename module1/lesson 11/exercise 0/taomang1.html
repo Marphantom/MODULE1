@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let array = [];
+        let size = 20;
+        let value = +prompt('nhap gia tri:');
+       
+        for (let i = 0 ; i < size; i++){
+            array[i] = Math.floor(Math.random()*(25-10+1)+10);
+            document.write(array[i] + ',');
+        }
+        let round = false;
+        // let index = -1;
+        let dem = [];
+        for (let j = 0 ; j < array.length; j++){
+        if (array[j] == value) {
+                round = true;
+                // index = j;
+                dem += j + ',' ;
+            } 
+        }
+        if (round){
+            document.write(' so ' + value + ' nam vi tri ' + dem);
+        } else {
+            document.write('trong mang khong co gia tri ' + value);
+        }
+</script>
+</html>
