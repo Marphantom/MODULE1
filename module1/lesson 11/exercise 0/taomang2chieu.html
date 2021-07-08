@@ -17,8 +17,14 @@
             arrchild[j] = Math.floor(Math.random()*81)+10;
         }
         array[i] = arrchild;
-        console.log(array);
-   
+        
     }
+    for (let f = 0 ; f < array.length ; f++){
+        for(let t=0;t < array[f].length;t++){
+            document.write(`${array[f][t]} &nbsp;&nbsp;`)
+        }
+        document.write('<br>');
+    }
+    
 </script>
 </html>
