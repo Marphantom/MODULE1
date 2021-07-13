@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Add New Product</h2>
+    <table>
+        <tr>
+            <td><input type="text" id="addProduct"></td>
+            <td><input type="button" id="add" value="Add" onclick="addArray() ; displayArray() "></td>
+        </tr>
+    </table>
+    <h2>Display All Product</h2>
+    <h5>Product Name</h5>
+    <div id="showArea"></div>
+</body>
+<script>
+    let array = [];
+
+    function addArray() {
+        array.push(document.getElementById('addProduct').value);
+        document.getElementById('addProduct').value = '';
+    }
+
+    function displayArray() {
+        let table = "<table border='1' id='tableValue'>";
+        for (let i = 0; i < array.length; i++) {
+            table += '<tr>'
+            table += `<td style="width: 100px;" id="valueArr"> ${array[i]} </td>`
+            table += `<td> <input type="button" id="editValue" value="Edit" onclick="editValue(${i})"></td>`
+            table += `<td> <input type="button" id="deleteValue" value="Delete" onclick ="deleteValue(${i})" > </td>`
+            table += '</tr>'
+        }
+        table += '</table>';
+        document.getElementById('showArea').innerHTML = table;
+    }
+
+    function deleteValue(i){
+        array.splice(i,1);
+        displayArray();
+    }
+
+    function editValue(i){
+        let newName = prompt('nhap ten moi:');
+        array[i] = newName;
+        displayArray();
+    }
+
+</script>
+
+</html>
