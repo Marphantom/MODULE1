@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAO NGUOC MANG</title>
+</head>
+<body>
+    
+</body>
+<script>
+   
+    let array = [addArray()];
+    
+    function addArray(){
+        let N = +prompt('nhap chieu dai mang:');
+        let arr = [];
+        for (let i = 0; i < N; i++){
+        let number = +prompt('nhap gia tri mang:');
+        arr.push(number);
+        }
+        arr.reverse();
+        document.write(arr);
+    }
+    
+ 
+</script>
+</html>

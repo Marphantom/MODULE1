@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUYEN DOI METER VA FEET</title>
+</head>
+
+<body>
+    <p>METERS</p><br>
+    <input type="text" id="meter" onchange="meterToFeet(this.value)"><br>
+    <p>FEET</p><br>
+    <input type="text" id="feet" onchange="feetToMeter(this.value)">
+
+</body>
+<script>
+    function feetToMeter(feet) {
+        document.getElementById('meter').value = 0.305 * feet;
+    }
+
+    function meterToFeet(meter) {
+        document.getElementById('feet').value = 3.279 * meter;
+    }
+</script>
+
+</html>
