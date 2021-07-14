@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let size = +prompt('nhap size:');
+    let matrix1 = addMatrix1(size);
+    let matrix2 = addMatrix2(size);
+
+
+    addMatrix1(size);
+    addMatrix2(size);
+    total2Matrix(matrix1, matrix2);
+    multiplication2Matrix(matrix1,matrix2);
+
+    function addMatrix1(size){
+        let arr = [];
+        for(let i = 0; i < size; i++ ){
+            let arrchild = [];
+            for (let j = 0; j < size; j++){
+                arrchild[j] = Math.floor(Math.random()*(40-10+1)+10);
+            }
+            arr[i] = arrchild;
+            document.write(`${arr[i]} <br>`);
+        }
+        return arr;
+    }
+
+    function addMatrix2(size){
+        let arr = [];
+        for(let i = 0; i < size; i++ ){
+            let arrchild = [];
+            for (let j = 0; j < size; j++){
+                arrchild[j] = Math.floor(Math.random()*(40-10+1)+10);
+            }
+            arr[i] = arrchild;
+            document.write(`${arr[i]} <br>`);
+        }
+        return arr;
+    }
+
+    function total2Matrix(matrix1, matrix2){
+        for(let i = 0; i < matrix1.length; i++ ){
+            for (let j = 0; j <  matrix2.length; j++){
+               matrix1[i][j] +=  matrix2[i][j];
+            }
+            document.write(`${matrix1[i][j]}<br>`)
+        }
+        return matrix1;
+        
+    }
+
+    function multiplication2Matrix(matrix1, matrix2){
+        for(let i = 0; i < matrix1.length; i++ ){
+            for (let j = 0; j <  matrix2.length; j++){
+               matrix1[i][j] *= matrix2[i][j];
+            }
+            document.write(`${matrix1[i][j]}<br>`)
+        }
+        return matrix1;
+    }
+
+
+</script>
+</html>

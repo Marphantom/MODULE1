@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let size = +prompt('nhap size:')
+    let array = inputMatrix(size);
+
+    document.write(`Tong cac so chan la: ${sumMatrix(array)}<br>`);
+    document.write(`Tong duong cheo chinh la :${sum1Matrix(array)} <br>`);
+    document.write(`Tong duong cheo phu la: ${sum2Matrix(array)}<br>`);
+    document.write(`tong duong bien la: ${totalMatrix(array)} <br>`)
+
+    displayMatrix(array);
+    document.write('<br>');
+    displayTriangleMatrixBottom(array);
+    document.write('<br>');
+    displayTriangleMatrixTop(array);
+    document.write('<br>');
+
+    //bai 1
+
+    function inputMatrix(size) {
+        let arr = [];
+        for (let i = 0; i < size; i++) {
+            let arrchild = [];
+            for (let j = 0; j < size; j++) {
+                arrchild[j] = Math.floor(Math.random() * (90 - 10 + 1) + 10);
+            }
+            arr[i] = arrchild;
+        }
+        return arr;
+    }
+
+    //bai 2
+
+    function sumMatrix(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 == 0) {
+                    sum += array[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    //bai 3
+
+    function sum1Matrix(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i][i];
+        }
+        return sum;
+    }
+
+    //bai 4
+
+    function sum2Matrix(array) {
+        let sum = 0;
+        for (let i = 0, j = array.length - 1; i < array.length; i++, j--) {
+            sum += array[i][j];
+
+        }
+        return sum;
+    }
+
+    //bai 5
+
+    function totalMatrix(array) {
+        let sum = 0;
+        for (j = 0; j < array.length; j++) {
+            sum += array[0][j] + array[array.length - 1][j];
+        }
+        for (i = 1; i < array.length - 1; i++) {
+            sum += array[i][0] + array[i][array.length - 1]
+        }
+        return sum;
+    }
+
+    // bai 6
+
+    function displayMatrix(array) {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                document.write(`${array[i][j]} &nbsp;&nbsp;`);
+            }
+            document.write('<br>');
+        }
+    }
+
+    // bai 7
+
+    function displayTriangleMatrixBottom(array) {
+        
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j <= i; j++) {
+                document.write(`${array[i][j]} &nbsp;&nbsp;`);
+            }
+            document.write('<br>');
+        }
+    }
+
+    // bai 8
+
+    function displayTriangleMatrixTop(array) {
+        for (let i = array.length-1; i >= 0; i--) {
+            for (let j = 0; j <= i; j++) {
+                document.write(`${array[i][j]} &nbsp;&nbsp;`);
+            }
+            document.write('<br>');
+        }
+    }
+
+</script>
+
+</html>
