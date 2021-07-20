@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HINH CHU NHAT OOP</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
+</body>
+<script>
+    class rectangle {
+        constructor(widthRec, heightRec) {
+            this.widthRec = widthRec;
+            this.heightRec = heightRec;
+        }
+
+        getWidthRec() {
+            return this.widthRec;
+        }
+
+        setWidthRec(widthRec) {
+            this.widthRec = widthRec;
+        }
+
+        getHeigthRec() {
+            return this.heightRec;
+        }
+
+        setHeigthRec(heightRec) {
+            this.heightRec = heightRec;
+        }
+
+        getPerimeter() {
+            return (this.widthRec + this.heightRec) * 2;
+        }
+
+        getArea() {
+            return (this.widthRec * this.heightRec);
+        }
+
+        getDraw() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0050";
+            ctx.fillRect(0, 0, 150, 75);
+        }
+    }
+
+    let myRectangle = new rectangle();
+    myRectangle.setWidthRec(10);
+    myRectangle.setHeigthRec(5);
+    myRectangle.getDraw();
+    alert(`chu vi hinh chu nhat la ${myRectangle.getPerimeter()}; dien tich hinh chu nhat la ${myRectangle.getArea()}`);
+
+
+
+</script>
+
+</html>

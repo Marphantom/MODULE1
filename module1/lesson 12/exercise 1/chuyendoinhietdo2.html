@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CHUYEN DOI NHIET DO 2</title>
 </head>
 <body>
-    <p><input type="text" name="" id="inputDoF">Do F</p>
-    <input type="button" name="" id="conver" value="convert" onclick="convertDoFToDoC()">
-    <p><input type="text" name="" id="showDoC"> Do C</p>
-</body>
+    <p><input type="text" name="" id="inputDoF" oninput="convertDoFToDoC(this.value)" onchange="convertDoFToDoC(this.value)">Do F</p>
+    <p>Do C: <span id="showDoC"></span></p>
 <script>
-    function convertDoFToDoC(){
-        let number = document.getElementById('inputDoF').value;
-        document.getElementById('showDoC').value = (number -32)/1.8;
+    function convertDoFToDoC(number){
+        let number = parseFloat(number);
+        document.getElementById('showDoC').innerHTML = (number -32)/1.8;
     }
 </script>
+</body>
 </html>

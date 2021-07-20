@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOP DATE</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function myDate(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getDay = function () {
+            return this.day
+        }
+
+        this.getMonth = function () {
+            return this.month;
+        }
+
+        this.getYear = function () {
+            return this.year;
+        }
+
+        this.setDay = function (day) {
+            this.day = day;
+        }
+
+        this.setMonth = function (month) {
+            this.month = month;
+        }
+
+        this.setYear = function (year) {
+            this.year = year;
+        }
+    }
+    let date = new myDate();
+
+    let day = +prompt("nhap ngay:");
+    let month = +prompt("nhap thang:");
+    let year = +prompt("nhap nam:");
+    date.setDay(day);
+    date.setMonth(month);
+    date.setYear(year);
+
+    alert(`${date.getDay()}/${date.getMonth()}/${date.getYear()}`);
+
+
+    // class myDate{
+
+    //     constructor(day, month, year){
+    //         this.day = day;
+    //         this.month = month;
+    //         this.year = year;
+    //     }
+
+    //     getDay(){
+    //         return this.day;
+    //    }
+
+    //    setDay(day){
+    //        this.day = day;
+    //    }
+
+    //    getMonth(){
+    //        return this.month;
+    //    }
+
+    //    setMonth(month){
+    //        this.month = month;
+    //    }
+
+    //    getYear(){
+    //        return this.year;
+    //    }
+
+    //    setYear(year){
+    //     this.year = year;
+    //    }
+
+    //    toString(){
+    //        return `${this.day}/${this.month}/${this.year}`;
+    //    }
+    // }
+
+    // let mydate = new myDate(30,10,2021);
+    // console.log(mydate.getDay());
+    // mydate.setDay(29);
+    // console.log(mydate.getDay());
+    // console.log(mydate.toString());
+
+</script>
+
+</html>
